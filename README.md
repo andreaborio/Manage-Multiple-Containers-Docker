@@ -79,7 +79,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 </pre>
 
 #MISSION ACCOMPLISHED! <br/>
-Thanks for your attention!
+Thanks for your attention!<br/>
 PS In this tutorial i've run each command without condensed them . But you can also run commands composed like "sudo docker rm firstid secondid ..." <br/>
 
 Have a great day! <br/>
