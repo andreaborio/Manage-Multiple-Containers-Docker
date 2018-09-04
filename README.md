@@ -1,4 +1,5 @@
-# Manage-Multiple-Containers-Docker
+# Manage Multiple Containers Docker
+# Quick start example
 A quick list of commands for manage multiple example containers <br/>
 What we want to do:<br/>
 
@@ -37,3 +38,49 @@ GENERATED ROOT PASSWORD: ox1ju5oMae6paishailoxaeGhe5em8io<br/>
 
 <pre>sudo docker container run --publish 8080:80 --detach  --name Myhttpd  httpd
 </pre>
+
+
+It's time to clean up!
+Now you should have something like this 
+<pre>CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
+60a26e21a411        httpd               &quot;httpd-foreground&quot;       29 minutes ago      Up 24 seconds       0.0.0.0:8080-&gt;80/tcp                Myhttpd
+4f053e51ff2c        mysql               &quot;docker-entrypoint.s…&quot;   About an hour ago   Up 16 seconds       0.0.0.0:3306-&gt;3306/tcp, 33060/tcp   MyMySQL
+9361d770d456        nginx               &quot;nginx -g &apos;daemon of…&quot;   About an hour ago   Up 3 seconds        0.0.0.0:80-&gt;80/tcp                  MyNginx
+</pre>
+
+Now lets simply run sudo docker stop for each container <br /> 
+<pre><font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker stop 60
+60
+<font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker stop 4f
+4f
+<font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker stop 93
+93
+<font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</pre>
+<b> Fine! Now we have to delete containers </b> <br/>
+In fact if we add -a flag to ps command we can see that we have only stop containers but they are still present on our system.
+<pre><font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+60a26e21a411        httpd               &quot;httpd-foreground&quot;       38 minutes ago      Exited (0) 5 minutes ago                       Myhttpd
+4f053e51ff2c        mysql               &quot;docker-entrypoint.s…&quot;   About an hour ago   Exited (0) 5 minutes ago                       MyMySQL
+9361d770d456        nginx               &quot;nginx -g &apos;daemon of…&quot;   About an hour ago   Exited (0) 5 minutes ago                       MyNginx
+<font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker rm 60
+60
+<font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker rm 4f
+4f
+<font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker rm 93
+93
+</pre>
+
+Let's check if everything's gone fine
+<pre><font color="#586E75"><b>chinaski@chinaski-XPS-15-9550</b></font>:<font color="#839496"><b>~</b></font>$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</pre>
+
+#MISSION ACCOMPLISHED! <br/>
+Thanks for your attention!
+PS In this tutorial i've run each command without condensed them . But you can also run commands composed like "sudo docker rm firstid secondid ..." <br/>
+
+Have a great day! <br/>
+© Andrea Borio 2018
