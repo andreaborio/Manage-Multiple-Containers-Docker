@@ -9,8 +9,8 @@ What we want to achieve:<br/>
  Run all of them  --detach and give them a name with --name <br/>
  nginx should listen on 80:80 httpd on 8080:80 mysql on 3306:3306 <br/>
  Set an --env var to mysql container to pass in MYSQL_RANDOM_ROOT_PASSWORD=yes <br/>
- Use docker container logs on mysql to find the random password it created on startup <br/>
- Clean it all up <br/>
+ Use docker container logs on mysql to find the random password created on startup <br/>
+ Clean all <br/>
 </b>
 
  <b>Let's start ensuring that everything is clean before creating new containers </b> <br/>
