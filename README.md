@@ -78,7 +78,7 @@ Let's check if everything's gone fine
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 </pre>
 
-#MISSION ACCOMPLISHED! <br/>
+<h2> <b> MISSION ACCOMPLISHED! </b> </h2> <br/>
 Thanks for your attention!<br/>
 PS In this tutorial i've run each command without condensed them . But you can also run commands composed like "sudo docker rm firstid secondid ..." <br/>
 
