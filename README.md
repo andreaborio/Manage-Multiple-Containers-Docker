@@ -1,6 +1,6 @@
 # Manage Multiple Containers Docker
 # Quick start example
-A quick list of commands for manage multiple example containers <br/>
+A quick list of commands for manage multiple containers <br/>
 What we want to do:<br/>
 
 <b>
